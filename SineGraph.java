@@ -1,5 +1,3 @@
-package EventDrivenProgAndAnim;
-
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;
