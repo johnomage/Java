@@ -1,38 +1,29 @@
 //Snippet calculates the factorial of large intergers. You could try 1000000!.
 
-import java.math.*;//package
-import java.util.*;
-public class Factorial
-{
-	static boolean repeat = true;
-	static Scanner input = new Scanner(System.in);
-	public static void main(String[] edus){
-		System.out.println("Calculate factorial of any integer: \n");
-		while(repeat){
-			try{
-				System.out.print("Enter integer: ");
-				BigInteger number = input.nextBigInteger();
-				System.out.println(number + "! is: " + factorial(number));
-				if(number.compareTo(BigInteger.ZERO)<0){
-					System.out.println("Entry must be zero and above.");
-				}
-			}
+class Factorial {
+ 
+	public static void main(String[] args) {
+		System.out.print("Enter value for factorial: ");
+		Scanner input = new Scanner(System.in);
+		int value = input.nextInt();
+		System.out.println(value + "! is " + factorial(value));
 		
-			catch(NumberFormatException | InputMismatchException er){
-				System.out.println("Please enter an integer like 3, 8, 16, 90...");
-				repeat= false;
-			}
-			
-			//break;
-		}
+		System.out.println("Digit count is " + count(factorial(value)));
 	}
 	
-	static BigInteger factorial(BigInteger number){
-		Integer i;
-		BigInteger result = BigInteger.ONE;
-		for(i=number.intValue(); i>=1; i--){
-			result = result.multiply(BigInteger.valueOf(i));
+	static long count(BigInteger k){ //Count all digits
+		double factor = Math.log(2)/Math.log(10);
+		int count = (int)(factor*k.bitLength()+1);
+		if(BigInteger.TEN.pow(count-1).compareTo(k)>0){
+			return count-1;
 		}
-		return result;
+		return count;
 	}
+	public static BigInteger factorial(long n) {//compute factorial
+		 BigInteger result = BigInteger.ONE;
+		 for (int i = 1; i <= n; i++)
+		 result = result.multiply(new BigInteger(i+""));
+		 
+		return result;
+        }
 }
