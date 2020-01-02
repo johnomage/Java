@@ -1,3 +1,5 @@
+//Application for recommending Electric meter based on energy demand.
+
 package projects;
 
 import java.io.File;
@@ -665,7 +667,7 @@ class saveProfile{
 	int n = 1;
 	Alert alert;
 	String filename = MeterSuitability.txtName.getText().toUpperCase() + " Suitability Report", folderName = "Meter Suitability", path;
-	File folder  = new File(path = System.getProperty("user.home") + File.separator + "Documents" + File.separator + folderName);
+	File folder  = new File(path = System.getProperty("user.home") + File.separator+.....+folderName);
 	File report = new File(path + File.separator + filename);
 	
 	public saveProfile() {}
