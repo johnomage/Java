@@ -1,4 +1,6 @@
-import java.math.*;//package com.edus.chapter13;
+//Snippet calculates the factorial of large intergers. You could try 1000000!.
+
+import java.math.*;//package
 import java.util.*;
 public class Factorial
 {
