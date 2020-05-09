@@ -63,8 +63,7 @@ public class Exercise15_28 extends Application {
 		});
 		
 		reverse.setOnMouseClicked(e->{
-			i = -i;
-			fan.setRate(i);
+			fan.setRate(-i);
 		});
 		
 		fast.setOnMouseClicked(e->{
